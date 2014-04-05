@@ -5,12 +5,12 @@ Soap generator
 
   * Put Class into "in" directory example: `MyClass.php` and `other_class.php`;
 
-  * From console use comment: `php generate.php MyClass.php other_class.php`;
+  * From console use command: `php generate.php MyClass.php other_class.php`;
 
-  * Done.;
+  * Done. Your *.wsdl files is in "out" directory;
 
 
-### Install
+### Install after clone
 
 `curl -sS https://getcomposer.org/installer | php`
 
