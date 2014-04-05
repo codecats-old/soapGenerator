@@ -1,0 +1,12 @@
+{
+    "name": "codecats/soap-generator",
+    "require": {
+        "zendframework/zendframework": "2"
+    },
+    "authors": [
+        {
+            "name": "ssstrz",
+            "email": "codecats@gmail.com"
+        }
+    ]
+}
