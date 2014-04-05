@@ -14,11 +14,12 @@ require './vendor/autoload.php';
 
 for ($i = 1 ; $i < count($argv); $i++) {
 	
-	require_once './in/' . $argv[1];
+	
 	$content = '';
 	$cwd = getcwd();
 	if (is_file('./in/' . $argv[$i]))$content =  file_get_contents('./in/' . $argv[$i]);
 	else echo "\033[93m 404 Not found file in \"$cwd/in/$argv[$i]\" \033[0m\n";
+	require_once './in/' . $argv[$i];
 
 	preg_replace_callback('@class (.+) @', function ($found) {
 		$class = $found[1];
