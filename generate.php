@@ -1,5 +1,6 @@
 <?php
 /*
+basic colors (python syntax)
 HEADER = '\033[95m'
     OKBLUE = '\033[94m'
     OKGREEN = '\033[92m'
@@ -21,7 +22,7 @@ for ($i = 1 ; $i < count($argv); $i++) {
 	else echo "\033[93m 404 Not found file in \"$cwd/in/$argv[$i]\" \033[0m\n";
 	require_once './in/' . $argv[$i];
 
-	preg_replace_callback('@class (.+) @', function ($found) {
+	preg_replace_callback('@class (.+) @U', function ($found) {
 		$class = $found[1];
 		
 		$autodiscover = new Zend\Soap\AutoDiscover();
@@ -34,8 +35,7 @@ for ($i = 1 ; $i < count($argv); $i++) {
 		$line = trim($line['line_buffer']);
 		if (empty($line)) $line = $defaultServer;
 
-		$autodiscover->setClass($class)
-					 ->setUri($line);
+		$autodiscover->setClass($class)->setUri($line);
 
 		$wsdl = $autodiscover->generate();
 		//$autodiscover->toXml() 
